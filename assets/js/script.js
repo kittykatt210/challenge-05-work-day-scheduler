@@ -2,10 +2,10 @@ $(function () {
   // Listener for click events on the save button. 
   $(".saveBtn").on("click", function(){
      
-    var message = $(this).siblings(".description").val();
+    var textBox = $(this).siblings(".description").val();
     var hour =$(this).parent().attr("id");
     
-    localStorage.setItem(hour, message);
+    localStorage.setItem(hour, textBox);
   });
 
   // Apply the past, present, or future class to each time block
@@ -31,7 +31,7 @@ $(function () {
   $("#hour-15 .description").val(localStorage.getItem("hour-15"));
   $("#hour-16 .description").val(localStorage.getItem("hour-16"));
   $("#hour-21 .description").val(localStorage.getItem("hour-21"));
-  
+
   // Code to display the current date in the header of the page.
   var today = dayjs();
   $('#currentDay').text(today.format('dddd, D MMMM YYYY'))
